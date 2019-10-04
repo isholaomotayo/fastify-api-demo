@@ -19,6 +19,7 @@
     "fastify-swagger": "^2.4.0",
     "mongoose": "^5.7.1",
     "nodemon": "^1.19.2",
-    "pino-pretty": "^3.2.1"
+    "pino-pretty": "^3.2.1",
+    "secret": "^1.0.2"
   }
 }
