@@ -7,8 +7,8 @@ exports.up = knex =>
           .primary()
           .unsigned();
 
-        table.string('fname').notNullable();
-        table.string('lname').notNullable();
+        table.string('first_name').notNullable();
+        table.string('last_name').notNullable();
         table
           .string('email')
           .unique()
@@ -26,14 +26,10 @@ exports.up = knex =>
           .string('phone')
           .unique()
           .notNullable();
-        table.string('code').nullable();
+        table.string('reset_code').nullable();
         table.string('avatar').nullable();
         table.text('personal_info', 'longtext').nullable();
 
-        table
-          .boolean('is_seen_psychometric_video')
-          .nullable()
-          .defaultTo(0);
         table
           .string('registration_source')
           .nullable()
