@@ -8,6 +8,7 @@ const Car = require("../models/Car");
 exports.getCars = async (req, reply) => {
   try {
     const cars = await Car.find();
+    console.log()
     return cars;
   } catch (err) {
     throw boom.boomify(err);
