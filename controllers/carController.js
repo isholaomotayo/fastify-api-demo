@@ -1,8 +1,8 @@
 // External Dependancies
-const boom = require("boom");
+const boom = require('boom');
 
 // Get Data Models
-const Car = require("../models/Car");
+const Car = require('../models/Car');
 
 // Get all cars
 exports.getCars = async (req, reply) => {
