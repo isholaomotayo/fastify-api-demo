@@ -1,4 +1,4 @@
-const knex = require('../index');
+const knex = require('../config/connection');
 const bookshelf = require('bookshelf')(knex);
 
 // Defining models

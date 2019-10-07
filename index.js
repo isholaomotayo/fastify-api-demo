@@ -4,8 +4,8 @@ var apm = require('elastic-apm-node').start({ logLevel: 'trace' });
 require('dotenv').config();
 //import adn initialize database connections
 
-const knex = require('./config/connection');
-const mongoose = require('./config/connection');
+const { knex, mongoose } = require('./config/connection');
+//const mongoose = require('./config/connection');
 
 //Require fatify framework and instantiate it
 const fastify = require('fastify')({
