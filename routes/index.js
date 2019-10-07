@@ -40,7 +40,7 @@ const routes = [
   },
   {
     method: 'POST',
-    url: '/api/staff',
+    url: '/api/addstaff',
     handler: staffController.addStaff,
     schema: schemaDocumentation.addStaff
   }

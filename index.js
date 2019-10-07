@@ -1,5 +1,11 @@
 //load Elastic APM
-//var apm = require("elastic-apm-node").start({ logLevel: "trace" });
+var apm = require('elastic-apm-node').start({ logLevel: 'trace' });
+
+require('dotenv').config();
+//import adn initialize database connections
+
+const { knex, mongoose } = require('./config/connection');
+//const mongoose = require('./config/connection');
 
 //Require fatify framework and instantiate it
 const fastify = require('fastify')({
@@ -15,25 +21,12 @@ const fastify = require('fastify')({
   }
 });
 
-require('dotenv').config();
-// Require external modules
-const mongoose = require('mongoose');
-
 // Import Swagger Options
 const swagger = require('./config/swagger');
 
 // Register Swagger
 fastify.register(require('fastify-swagger'), swagger.options);
-
-// Connect to DB
-mongoose
-  .connect('mongodb://localhost/mycargarage', {
-    useUnifiedTopology: true,
-    useNewUrlParser: true
-  })
-  .then(() => console.log('MongoDB connected…'))
-  .catch(err => console.log(err));
-
+//Import JWT plugin for fastify
 fastify.register(require('fastify-jwt'), {
   secret: process.env.JWTSECRET
 });
