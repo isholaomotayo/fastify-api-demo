@@ -15,8 +15,8 @@ const routes = [
     url: '/api/cars/:id',
     handler: carController.getSingleCar,
     schema: schemaDocumentation.getSingleCar
-  },
-  {
+  }
+  /*,{
     method: 'POST',
     url: '/api/cars',
     handler: carController.addCar,
@@ -43,7 +43,7 @@ const routes = [
     url: '/api/addstaff',
     handler: staffController.addStaff,
     schema: schemaDocumentation.addStaff
-  }
+  }*/
 ];
 
 module.exports = routes;

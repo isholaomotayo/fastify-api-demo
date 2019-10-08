@@ -1,5 +1,5 @@
 //load Elastic APM
-var apm = require('elastic-apm-node').start({ logLevel: 'trace' });
+//var apm = require('elastic-apm-node').start({ logLevel: 'trace' });
 
 require('dotenv').config();
 //import adn initialize database connections

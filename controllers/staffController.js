@@ -4,6 +4,10 @@ const boom = require("boom");
 // Get Data Models
 const Staff = require("../models/Staff");
 
+//Get knex
+const knex = require('../config/connection');
+
+
 // Get all staff
 exports.getAllstaff = async (req, reply) => {
   try {
