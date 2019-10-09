@@ -8,6 +8,7 @@ const Car = require('../models/Car');
 // Get all cars
 exports.getCars = async (req, reply) => {
   try {
+
     const cars = await Car.fetchAll();
     return cars.serialize();
     
