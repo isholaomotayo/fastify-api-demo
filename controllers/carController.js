@@ -1,33 +1,41 @@
 // External Dependancies
-const boom = require("boom");
+const boom = require('boom');
 
 // Get Data Models
-const Car = require("../models/Car");
+const Car = require('../models/Car');
+//Get knex
 
 // Get all cars
 exports.getCars = async (req, reply) => {
   try {
-    const cars = await Car.find();
-    console.log()
-    return cars;
+
+    const cars = await Car.fetchAll();
+    return cars.serialize();
+    
   } catch (err) {
     throw boom.boomify(err);
   }
 };
 
-// Get single car by ID
+// Get single car by Name
 exports.getSingleCar = async (req, reply) => {
   try {
-    const id = req.params.id;
-    const car = await Car.findById(id);
+    const name = req.params.name;
+    //const car = await Car.fetch('id', '=', id)
+    //const car = await Car.where({ name: req.params.name }).fetch();
+
+    const car = await new Car({ 'name': name }).fetch();
+    
     return car;
+    //return [{ name: 'Genny' }];
   } catch (err) {
+    console.log('nah i got here');
     throw boom.boomify(err);
   }
 };
 
 // Add a new car
-exports.addCar = async (req, reply) => {
+/* exports.addCar = async (req, reply) => {
   try {
     const car = new Car(req.body);
     return car.save();
@@ -58,4 +66,4 @@ exports.deleteCar = async (req, reply) => {
   } catch (err) {
     throw boom.boomify(err);
   }
-};
+}; */

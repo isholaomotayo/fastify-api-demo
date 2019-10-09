@@ -1,7 +1,11 @@
-const knex = require('../config/connection');
-const bookshelf = require('bookshelf')(knex);
+const knex = require('../config/connection').knex;
 
-// Defining models
-const User = bookshelf.model('User', {
-  tableName: 'users'
+const Bookshelf = require('bookshelf')(knex);
+
+const User = Bookshelf.Model.extend({
+  tableName: 'users',
+  hasTimestamps: true,
+  hidden: ['password']
 });
+
+module.exports = Bookshelf.model('User', User);
