@@ -1,5 +1,6 @@
 // Import our Controllers
 const carController = require('../controllers/carController');
+const staffController = require('../controllers/staffController');
 const userController = require('../controllers/userController');
 //import swagger routes schema
 const schemaDocumentation = require('../documentation/');
@@ -12,11 +13,11 @@ const routes = [
   },
   {
     method: 'GET',
-    url: '/api/cars/:id',
+    url: '/api/cars/:name',
     handler: carController.getSingleCar,
     schema: schemaDocumentation.getSingleCar
   },
-  {
+  /* {
     method: 'POST',
     url: '/api/cars',
     handler: carController.addCar,
@@ -32,6 +33,18 @@ const routes = [
     url: '/api/cars/:id',
     handler: carController.deleteCar
   },
+  {
+    method: 'GET',
+    url: '/api/staff',
+    handler: staffController.getAllstaff,
+    schema: schemaDocumentation.getAllstaff
+  },
+  {
+    method: 'POST',
+    url: '/api/addstaff',
+    handler: staffController.addStaff,
+    schema: schemaDocumentation.addStaff
+  }, */
   {
     method: 'GET',
     url: '/api/users',

@@ -1,15 +1,10 @@
-// External Dependancies
-const mongoose = require("mongoose");
+const knex = require('../config/connection').knex;
 
-const carSchema = new mongoose.Schema({
-  name: String,
-  brand: String,
-  price: String,
-  age: Number,
-  services: {
-    type: Map,
-    of: String
-  }
+const Bookshelf = require('bookshelf')(knex);
+
+const Car = Bookshelf.Model.extend({
+  tableName: 'car',
+  hasTimestamps: true
 });
 
-module.exports = mongoose.model("Car", carSchema);
+module.exports = Bookshelf.model('Car', Car);
