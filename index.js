@@ -4,8 +4,7 @@
 require('dotenv').config();
 //import adn initialize database connections
 
-const { knex, mongoose } = require('./config/connection');
-//const mongoose = require('./config/connection');
+//const { knex, mongoose } = require('./config/connection');
 
 //Require fatify framework and instantiate it
 const fastify = require('fastify')({

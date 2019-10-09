@@ -1,10 +1,10 @@
-/** 
-const knex = require('../config/connection');
-const bookshelf = require('bookshelf')(knex);
+const knex = require('../config/connection').knex;
 
-// Defining models
-const Car = bookshelf.model('Car', {
-  tableName: 'car'
+const Bookshelf = require('bookshelf')(knex);
+
+const Car = Bookshelf.Model.extend({
+  tableName: 'car',
+  hasTimestamps: true
 });
 
-*/
+module.exports = Bookshelf.model('Car', Car);
