@@ -20,7 +20,7 @@
     "fastify-swagger": "^2.4.0",
     "knex": "^0.19.5",
     "mongoose": "^5.7.1",
-    "nodemon": "^1.19.2",
+    "nodemon": "^1.19.4",
     "pg": "^7.12.1",
     "pino-pretty": "^3.2.1"
   }
