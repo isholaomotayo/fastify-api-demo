@@ -19,7 +19,7 @@
     "fastify-jwt": "^1.1.0",
     "fastify-swagger": "^2.4.0",
     "knex": "^0.19.5",
-    "mongoose": "^5.7.1",
+    "mongoose": "^5.7.5",
     "nodemon": "^1.19.2",
     "pg": "^7.12.1",
     "pino-pretty": "^3.2.1"
